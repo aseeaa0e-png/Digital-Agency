@@ -3,582 +3,575 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>أثر الرقمية — حوّل البحث عن منتجاتك إلى عملاء حقيقيين ومبيعات فعلية</title>
-  <meta name="description" content="نساعد المحلات والمعارض التقليدية على تحويل البحث عبر الإنترنت إلى عملاء حقيقيين ومبيعات فعلية عبر منظومة أثر للنمو الرقمي — المنطقة الشرقية والرياض.">
+  <title>تمكين النمو — منظومة النمو الرقمي للمحلات والمعارض</title>
+  <meta name="description" content="نساعد المحلات والمعارض التقليدية على تحويل البحث عبر الإنترنت إلى عملاء حقيقيين ومبيعات فعلية عبر منظومة تمكين النمو — المنطقة الشرقية والرياض.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;600;700;800&family=Almarai:wght@400;500;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Almarai:wght@400;500;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    @keyframes xsheen {
-      from { background-position: 160% -30%; }
-      to   { background-position: -60% 130%; }
+    :root{
+      --ink:#1A1C20; --ink-soft:#43474E; --muted:#6B7079;
+      --bg:#F4F0E8; --beige:#E9E2D3; --dark:#14161A; --dark-2:#1C1F25;
+      --teal:#2FA89A; --teal-2:#54CDBE; --teal-deep:#1F7D72; --terra:#C97B4A;
+      --line:rgba(20,22,26,.12); --line-d:rgba(255,255,255,.13);
+      --r:18px; --r-sm:13px;
+      --shadow:0 18px 44px rgba(20,22,26,.10);
+      --shadow-d:0 26px 60px rgba(0,0,0,.45);
     }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Almarai', -apple-system, Tahoma, Arial, sans-serif;
-      background: #F3EFE7;
-      color: #1C1E22;
-      line-height: 1.7;
-      overflow-x: hidden;
-      min-height: 100%;
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Almarai',-apple-system,Tahoma,Arial,sans-serif;
+      background:var(--bg);color:var(--ink);line-height:1.85;font-size:1rem;
+      overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
     }
-    details > summary { list-style: none; cursor: pointer; }
-    details > summary::-webkit-details-marker { display: none; }
-    details[open] .faq-plus { transform: rotate(45deg); }
+    .wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+    .section{padding:clamp(3.5rem,7vw,5.5rem) 0}
+    .section-sm{padding:clamp(2rem,4vw,2.6rem) 0}
+
+    /* backgrounds */
+    .s-beige{background:var(--beige)}
+    .s-dark{background:var(--dark);color:#fff}
+
+    /* typography */
+    h1{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.02em;
+       font-size:clamp(2.15rem,5.2vw,3.05rem);line-height:1.22}
+    .h2{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.015em;
+        font-size:clamp(1.7rem,3.6vw,2.2rem);line-height:1.3;margin-bottom:.7rem}
+    .eyebrow{font-family:'IBM Plex Sans Arabic',sans-serif;font-size:.82rem;font-weight:700;
+        letter-spacing:0;color:#A8551F;
+        display:flex;align-items:center;gap:.5rem;margin-bottom:1.1rem}
+    .eyebrow b{font-family:'IBM Plex Mono',monospace;color:var(--teal);font-weight:600}
+    .s-dark .eyebrow{color:#E6975F}
+    .lead{font-size:1.08rem;color:var(--ink-soft);max-width:44rem;line-height:1.9}
+    .s-dark .lead{color:#C3C8D0}
+    .head{max-width:46rem;margin-bottom:2.6rem}
+    p+p{margin-top:.85rem}
+
+    /* grids & cards */
+    .grid{display:grid;gap:1.1rem}
+    .c2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .c3{grid-template-columns:repeat(auto-fit,minmax(248px,1fr))}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.65rem;
+          display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .card-title{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.12rem;
+          line-height:1.4;margin-bottom:.4rem}
+    .card p{font-size:.92rem;color:var(--muted);line-height:1.75}
+    .ghost{background:rgba(255,255,255,.05);border:1px solid var(--line-d);color:#fff}
+    .ghost p{color:#AAB0B9}
+
+    /* number badge */
+    .badge{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:1.05rem;
+        width:2.6rem;height:2.6rem;border-radius:50%;display:flex;align-items:center;justify-content:center;
+        flex:0 0 auto;background:rgba(47,168,154,.12);color:var(--teal-deep);margin-bottom:1rem}
+    .ghost .badge{background:rgba(84,205,190,.16);color:var(--teal-2)}
+    .badge-fill{background:linear-gradient(135deg,var(--teal),var(--teal-deep));color:#08110F}
+
+    /* buttons */
+    .btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--teal);color:#08110F;
+        font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.97rem;
+        padding:1rem 1.7rem;border-radius:13px;text-decoration:none;
+        transition:transform .16s ease,box-shadow .16s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(47,168,154,.4)}
+    .btn-sm{padding:.6rem 1.15rem;font-size:.82rem;border-radius:99px}
+
+    /* nav */
+    nav{position:sticky;top:0;z-index:60;background:rgba(20,22,26,.9);
+        backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+        border-bottom:1px solid var(--line-d)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;
+        padding:.85rem 1.5rem;max-width:1040px;margin:0 auto}
+    .brand{display:flex;align-items:center;gap:.55rem;color:#fff;
+        font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.12rem}
+    .brand small{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:.7rem;
+        letter-spacing:.04em;color:#8F949D}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 14px var(--teal)}
+
+    /* hero */
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;opacity:.6;
+        background:radial-gradient(circle at 16% 18%,rgba(47,168,154,.2),transparent 42%),
+                   radial-gradient(circle at 88% 72%,rgba(201,123,74,.14),transparent 46%)}
+    .hero-grid{position:relative;z-index:1;display:grid;gap:2.4rem;align-items:center;
+        grid-template-columns:1.15fr .85fr}
+    @media(max-width:820px){.hero-grid{grid-template-columns:1fr}}
+
+    /* phone mockup */
+    .pv{display:flex;flex-direction:column;align-items:center;gap:.9rem}
+    .phone{width:min(280px,80vw);background:#0D0F12;border:1px solid rgba(255,255,255,.14);
+        border-radius:30px;padding:.7rem;box-shadow:var(--shadow-d)}
+    .phone-scr{background:#F4F0E8;border-radius:22px;padding:1rem .9rem;overflow:hidden}
+    .ph-search{display:flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);
+        border-radius:99px;padding:.55rem .9rem;font-size:.82rem;color:var(--muted);margin-bottom:.9rem}
+    .ph-res{display:flex;align-items:center;gap:.7rem;background:#fff;border:1px solid var(--line);
+        border-radius:13px;padding:.7rem .8rem;margin-bottom:.55rem}
+    .ph-res.top{border-color:var(--teal);box-shadow:0 8px 22px rgba(47,168,154,.22)}
+    .ph-res .ic{width:2rem;height:2rem;border-radius:8px;flex:0 0 auto;display:flex;
+        align-items:center;justify-content:center;background:rgba(47,168,154,.14);font-size:.95rem}
+    .ph-res.dim{opacity:.55}
+    .ph-res.dim .ic{background:rgba(20,22,26,.06)}
+    .ph-res b{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.92rem;display:block}
+    .ph-res small{font-size:.72rem;color:var(--muted)}
+    .ph-res .rate{margin-inline-start:auto;font-family:'IBM Plex Mono',monospace;font-size:.74rem;
+        font-weight:600;color:var(--teal-deep);white-space:nowrap}
+    .pv-cap{font-size:.88rem;color:#AAB0B9}
+    .pv-cap b{color:#fff;font-weight:800;font-family:'IBM Plex Sans Arabic',sans-serif}
+
+    /* quote bar */
+    .quote{border-inline-start:3px solid var(--teal);padding-inline-start:1.1rem;margin-top:1.7rem}
+    .quote p{margin:0}
+    .quote .q1{color:#C3C8D0;font-size:.95rem}
+    .quote .q2{color:#fff;font-weight:800;font-size:1.1rem;margin-top:.3rem;
+        font-family:'IBM Plex Sans Arabic',sans-serif}
+
+    /* compare cols */
+    .cmp{border-radius:var(--r);padding:1.65rem}
+    .cmp-head{font-family:'IBM Plex Mono',monospace;font-size:.72rem;margin-bottom:1rem}
+    .cmp-row{display:flex;align-items:center;gap:.6rem;font-size:1rem;padding:.15rem 0}
+    .strike{color:#AEB3BC;text-decoration:line-through}
+    .yes{font-weight:800;font-family:'IBM Plex Sans Arabic',sans-serif}
+    .yes .ck{color:var(--teal);font-weight:800}
+
+    /* flow row */
+    .flow{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+    .flow .card{padding:1.25rem 1.1rem;align-items:flex-start}
+    .flow .badge{width:2.3rem;height:2.3rem;font-size:.95rem;margin-bottom:.8rem}
+    .flow .t{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.97rem;margin-bottom:.2rem}
+    .flow .d{font-size:.8rem;color:var(--muted);line-height:1.6}
+    .ghost .d{color:#AAB0B9}
+
+    /* outcome */
+    .out{display:flex;gap:1rem;align-items:flex-start}
+    .out .ic{width:2.8rem;height:2.8rem;border-radius:12px;flex:0 0 auto;display:flex;
+        align-items:center;justify-content:center;font-size:1.25rem;
+        background:linear-gradient(135deg,rgba(47,168,154,.16),rgba(201,123,74,.14))}
+
+    /* pills */
+    .pills{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.6rem}
+    .pill{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.84rem;
+        background:var(--dark);color:var(--teal-2);border-radius:99px;padding:.45rem 1.05rem}
+    .pill-soft{background:rgba(255,255,255,.06);color:#C3C8D0;border:1px solid var(--line-d);font-weight:700}
+
+    /* icon badge (trust cards) */
+    .iconb{width:3rem;height:3rem;border-radius:14px;display:flex;align-items:center;justify-content:center;
+        font-size:1.3rem;background:linear-gradient(135deg,var(--teal),var(--terra));margin-bottom:.9rem}
+
+    /* timeline */
+    .tl{position:relative;padding-inline-start:2.4rem}
+    .tl::before{content:"";position:absolute;inset-inline-start:.85rem;top:.4rem;bottom:.4rem;width:2px;
+        background:repeating-linear-gradient(180deg,var(--teal) 0 5px,transparent 5px 10px)}
+    .tl-item{position:relative;padding-bottom:1.8rem}
+    .tl-item:last-child{padding-bottom:0}
+    .tl-num{position:absolute;inset-inline-start:-2.4rem;top:-.15rem;width:1.75rem;height:1.75rem;
+        border-radius:50%;background:var(--dark);color:var(--teal-2);font-family:'IBM Plex Mono',monospace;
+        font-size:.78rem;display:flex;align-items:center;justify-content:center}
+    .tl-item h4{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.02rem;margin-bottom:.25rem}
+    .tl-item p{font-size:.9rem;color:var(--muted)}
+
+    /* packages */
+    .pkgs{display:grid;gap:1.1rem;grid-template-columns:repeat(3,1fr)}
+    @media(max-width:820px){.pkgs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+        margin:0 -1.5rem;padding:.4rem 1.5rem 1rem;-webkit-overflow-scrolling:touch}
+      .pkg{flex:0 0 84%;max-width:320px;scroll-snap-align:center}}
+    .pkg{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.7rem 1.5rem;position:relative}
+    .pkg.feat{border:2px solid var(--teal)}
+    .pkg-tag{position:absolute;top:-.75rem;inset-inline-start:1.3rem;background:var(--teal);color:#08110F;
+        font-size:.68rem;font-weight:800;padding:.28rem .7rem;border-radius:99px;
+        font-family:'IBM Plex Sans Arabic',sans-serif}
+    .pkg-name{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.22rem;margin-bottom:.2rem}
+    .pkg-sub{font-size:.82rem;color:var(--muted);margin-bottom:1.2rem;min-height:2.4em}
+    .pkg ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+    .pkg li{display:flex;align-items:flex-start;gap:.55rem;font-size:.9rem}
+    .pkg li .ck{color:var(--teal);font-weight:800;flex:0 0 auto}
+    .pkg li.off{color:#AEB3BC}
+    .pkg li.off .ck{color:#C6CAD0}
+
+    /* faq */
+    details{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:0 1.4rem;margin-bottom:.75rem}
+    summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer;
+        list-style:none;padding:1.15rem 0;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1rem}
+    summary::-webkit-details-marker{display:none}
+    .faq-plus{color:var(--teal);font-size:1.4rem;font-weight:800;transition:transform .2s ease;flex:0 0 auto}
+    details[open] .faq-plus{transform:rotate(45deg)}
+    details p{font-size:.92rem;color:var(--muted);padding-bottom:1.15rem}
+
+    /* center block */
+    .center{text-align:center;max-width:42rem;margin:0 auto}
+    .center .lead{margin:0 auto 1.8rem}
+    footer{background:var(--dark);color:#8F949D;text-align:center;padding:1.6rem 1rem;font-size:.8rem;
+        border-top:1px solid var(--line-d)}
   </style>
 </head>
 <body>
 
   <!-- ===== Nav ===== -->
-  <nav style="position:sticky;top:0;z-index:60;background:rgba(20,22,26,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.1)">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;max-width:920px;margin:0 auto">
-      <div style="color:#fff;font-size:1.05rem;font-weight:800;display:flex;align-items:center;gap:.4rem;font-family:'IBM Plex Sans Arabic',sans-serif">
-        <span style="width:8px;height:8px;border-radius:50%;background:#2FA89A;box-shadow:0 0 12px #2FA89A"></span>
-        أثر <span style="font-family:'IBM Plex Mono',monospace;color:#8B909B;font-weight:600;font-size:.78rem;letter-spacing:.02em">Digital</span>
-      </div>
-      <a href="https://wa.me/966553353448?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%F0%9F%91%8B%0A%D8%B5%D8%A7%D8%AD%D8%A8%20%D9%85%D8%AD%D9%84%20%D9%88%D8%AD%D8%A7%D8%A8%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A3%D8%AB%D8%B1%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9.%0A%D8%A8%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D8%B1%20%D8%AA%D9%88%D8%A7%D8%B5%D9%84%D9%83%D9%85%20%F0%9F%8C%BF" target="_blank" rel="noopener" style="background:#2FA89A;color:#0c1614;font-weight:800;font-size:.78rem;padding:.55rem 1rem;border-radius:99px;text-decoration:none;white-space:nowrap;font-family:'IBM Plex Sans Arabic',sans-serif">احجز استشارة مجانية</a>
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="dot"></span>تمكين النمو <small>للنشاط التقليدي</small></div>
+      <a class="btn btn-sm" href="https://wa.me/966553353448?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%F0%9F%91%8B%0A%D8%B5%D8%A7%D8%AD%D8%A8%20%D9%86%D8%B4%D8%A7%D8%B7%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9.%0A%D8%A8%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D8%B1%D9%83%D9%85%20%F0%9F%8C%BF" target="_blank" rel="noopener">احجز استشارة مجانية</a>
     </div>
   </nav>
 
   <!-- ===== Hero ===== -->
-  <header style="background:#14161A;color:#fff;padding:3rem 0 2.5rem;position:relative;overflow:hidden">
-    <div style="position:absolute;inset:0;opacity:.5;background-image:radial-gradient(circle at 18% 20%, rgba(47,168,154,.18), transparent 40%),radial-gradient(circle at 85% 70%, rgba(201,123,74,.13), transparent 45%)"></div>
-    <div style="position:relative;z-index:1;max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#4FC4B6;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-        <span style="color:#C97B4A">//</span>كل يوم يبحث عملاؤك عن منتجاتك
-      </div>
-      <h1 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:clamp(2.05rem,6vw,2.7rem);line-height:1.28;margin-bottom:1rem">
-        العملاء يبحثون عن منتجاتك كل يوم — <em style="font-style:normal;color:#4FC4B6">فمن يجدون أولاً؟</em>
-      </h1>
-      <p style="color:#B7BBC3;font-size:1.05rem;max-width:36rem;margin-bottom:1.6rem">المشكلة ليست أن العملاء لا يبحثون عن منتجاتك… بل أنهم قد يجدون <strong style="color:#fff;font-weight:800">منافسيك أولاً</strong>.</p>
-      <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:2.2rem">
-        <a href="https://wa.me/966553353448?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%F0%9F%91%8B%0A%D8%B5%D8%A7%D8%AD%D8%A8%20%D9%85%D8%AD%D9%84%20%D9%88%D8%AD%D8%A7%D8%A8%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A3%D8%AB%D8%B1%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9.%0A%D8%A8%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D8%B1%20%D8%AA%D9%88%D8%A7%D8%B5%D9%84%D9%83%D9%85%20%F0%9F%8C%BF" target="_blank" rel="noopener" style="background:#2FA89A;color:#0c1614;font-weight:800;font-size:.88rem;padding:.85rem 1.4rem;border-radius:12px;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;font-family:'IBM Plex Sans Arabic',sans-serif">📲 احجز استشارة مجانية</a>
+  <header class="hero s-dark section">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><b>//</b> كل يوم يبحث عملاؤك عن منتجاتك</div>
+        <h1>عملاؤك يبحثون عن منتجاتك كل يوم — <em style="font-style:normal;color:var(--teal-2)">فمَن يجدون أولاً؟</em></h1>
+        <p class="lead" style="margin-top:1.1rem">المشكلة ليست في غياب الطلب على منتجاتك، بل في أن العميل قد يجد منافسك أولاً، ويتّخذ قراره قبل أن يصل إليك.</p>
+        <div style="margin-top:1.8rem">
+          <a class="btn" href="https://wa.me/966553353448?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%F0%9F%91%8B%0A%D8%B5%D8%A7%D8%AD%D8%A8%20%D9%86%D8%B4%D8%A7%D8%B7%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9.%0A%D8%A8%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D8%B1%D9%83%D9%85%20%F0%9F%8C%BF" target="_blank" rel="noopener">📲 احجز استشارة مجانية</a>
+        </div>
+        <div class="quote" data-reveal>
+          <p class="q1">القرار يُحسم عبر الإنترنت قبل أن تطأ قدم العميل معرضك —</p>
+          <p class="q2">اجعل نشاطك الخيار الأول الذي يرونه ويثقون به.</p>
+        </div>
       </div>
 
-      <!-- Transformation strip -->
-      <div id="xform" style="position:relative;height:118px;border-radius:18px;overflow:hidden;margin-top:.4rem;box-shadow:0 18px 40px rgba(0,0,0,.35)">
-        <div style="position:absolute;inset:0;clip-path:polygon(0 0,57% 0,43% 100%,0 100%);background:repeating-linear-gradient(95deg, rgba(255,255,255,.05) 0 2px, transparent 2px 7px),linear-gradient(120deg,#caa06a,#a9772f 45%,#8a5d24)"></div>
-        <div style="position:absolute;inset:0;clip-path:polygon(45% 0,47% 0,33% 100%,31% 100%);background:linear-gradient(180deg, #4FC4B6, #C97B4A);filter:blur(.5px)"></div>
-        <div style="position:absolute;inset:0;clip-path:polygon(43% 0,100% 0,100% 100%,57% 100%);background:repeating-linear-gradient(0deg, rgba(47,168,154,.35) 0 1px, transparent 1px 14px),repeating-linear-gradient(90deg, rgba(47,168,154,.35) 0 1px, transparent 1px 14px),#0e2624"></div>
-        <div id="sheen" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg, transparent 40%, rgba(255,255,255,.22) 50%, transparent 60%);background-size:260% 260%;background-position:160% -30%"></div>
-        <span style="position:absolute;bottom:.6rem;inset-inline-start:.7rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:rgba(255,255,255,.75);background:rgba(0,0,0,.3);padding:.2rem .55rem;border-radius:99px">المحل اليوم</span>
-        <span style="position:absolute;bottom:.6rem;inset-inline-end:.7rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:rgba(255,255,255,.75);background:rgba(0,0,0,.3);padding:.2rem .55rem;border-radius:99px">المحل بعد أثر</span>
-      </div>
-
-      <div data-reveal style="border-inline-start:3px solid #2FA89A;padding-inline-start:1rem;margin-top:1.5rem">
-        <p style="color:#B7BBC3;font-size:.92rem;margin:0">القرار يُحسم أونلاين قبل أن تطأ قدم العميل معرضك —</p>
-        <p style="color:#fff;font-weight:800;font-size:1.05rem;margin-top:.25rem;font-family:'IBM Plex Sans Arabic',sans-serif">خلّي محلك أول اختيار يشوفونه ويثقون به.</p>
-      </div>
-
-      <!-- proof strip -->
-      <div data-reveal style="display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:2rem">
-        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem 1.1rem">
-          <div style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.2rem;color:#4FC4B6;line-height:1.2">خبرة طويلة</div>
-          <div style="font-size:.82rem;color:#B7BBC3;margin-top:.15rem">في التقنية والأعمال</div>
+      <!-- phone mockup -->
+      <div class="pv" data-reveal aria-hidden="true">
+        <div class="phone">
+          <div class="phone-scr">
+            <div class="ph-search">🔎 <span>أرضيات ومعارض قريبة مني…</span></div>
+            <div class="ph-res top">
+              <span class="ic">📍</span>
+              <div><b>نشاطك</b><small>الأعلى تقييمًا · يفتح الآن</small></div>
+              <span class="rate">★ 4.9</span>
+            </div>
+            <div class="ph-res dim"><span class="ic">📍</span><div><b>منافس</b><small>—</small></div></div>
+            <div class="ph-res dim"><span class="ic">📍</span><div><b>منافس</b><small>—</small></div></div>
+          </div>
         </div>
-        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem 1.1rem">
-          <div style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.2rem;color:#4FC4B6;line-height:1.2">٢٤/٧</div>
-          <div style="font-size:.82rem;color:#B7BBC3;margin-top:.15rem">رد فوري على استفسارات عملائك</div>
-        </div>
-        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem 1.1rem">
-          <div style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.2rem;color:#4FC4B6;line-height:1.2">أسابيع</div>
-          <div style="font-size:.82rem;color:#B7BBC3;margin-top:.15rem">للإطلاق الكامل لا أشهر</div>
-        </div>
+        <div class="pv-cap">حين يبحثون… <b>تظهر أنت أولاً.</b></div>
       </div>
     </div>
   </header>
 
-  <!-- ===== 1. الخسارة التي لا تراها ===== -->
-  <section style="padding:3rem 0">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div data-reveal style="margin-bottom:1.8rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#C97B4A;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-          <span style="color:#C97B4A">//</span>المشكلة
-        </div>
-        <h2 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.55rem;line-height:1.35;margin-bottom:.8rem">الخسارة التي لا تراها</h2>
-        <p style="color:#8B909B;font-size:.92rem;max-width:38rem;margin-bottom:.6rem">ليس كل عميل ضائع هو عميل دخل معرضك ثم غادر. هناك عملاء يبحثون الآن عن منتجات وخدمات مثل التي تقدمها، ويقارنون الخيارات ويتخذون قراراتهم قبل زيارة أي معرض أو التواصل مع أي بائع.</p>
-        <p style="color:#8B909B;font-size:.92rem;max-width:38rem">وإذا لم يجدوا حضورًا واضحًا ومعلومات كافية وتجربة مريحة، فقد يختارون منافسًا آخر دون أن تعلم أنهم كانوا مهتمين بك أصلاً.</p>
+  <!-- ===== 1. المشكلة ===== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow"><b>//</b> المشكلة</div>
+        <h2 class="h2">الخسارة التي لا تراها</h2>
+        <p class="lead">ليس كل عميل مفقود هو من دخل معرضك ثم غادر. هناك من يبحث الآن عن منتجات كالتي تقدّمها، يقارن الخيارات ويتّخذ قراره قبل أن يزور أي معرض. وإن لم يجد حضورًا واضحًا ومعلومات كافية وتجربة مريحة، فقد يختار سواك دون أن تعلم أنه كان مهتمًا بك أصلاً.</p>
       </div>
-      <div style="display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:1.1rem 1.2rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#C97B4A;margin-bottom:.4rem">// ٠١</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1rem;margin-bottom:.35rem">يقرر قبل أن يصل</h4>
-          <p style="font-size:.85rem;color:#8B909B">العميل يحسم اختياره من جواله قبل أن تطأ قدمه معرضك — فلو لم تقنعه أونلاين، لن يأتي أصلاً.</p>
+      <div class="grid c3">
+        <div class="card" data-reveal>
+          <div class="badge">01</div>
+          <div class="card-title">يقرّر قبل أن يصل</div>
+          <p>يحسم العميل اختياره من هاتفه قبل أن تطأ قدمه معرضك؛ فإن لم تُقنعه عبر الإنترنت، لن يأتي أساسًا.</p>
         </div>
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:1.1rem 1.2rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#C97B4A;margin-bottom:.4rem">// ٠٢</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1rem;margin-bottom:.35rem">يسأل ولا يجد ردًا</h4>
-          <p style="font-size:.85rem;color:#8B909B">استفسار بعد الدوام بلا إجابة فورية يعني عميلًا انتقل لمنافس ردّ عليه أسرع — كل دقيقة تأخير صفقة محتملة.</p>
+        <div class="card" data-reveal>
+          <div class="badge">02</div>
+          <div class="card-title">يسأل ولا يجد ردًا</div>
+          <p>استفسار بعد ساعات العمل دون إجابة فورية يعني عميلاً انتقل إلى منافس أسرع استجابة. كل دقيقة تأخير فرصة بيع مهدورة.</p>
         </div>
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:1.1rem 1.2rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#C97B4A;margin-bottom:.4rem">// ٠٣</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1rem;margin-bottom:.35rem">يبحث ولا يجدك</h4>
-          <p style="font-size:.85rem;color:#8B909B">لو لم تظهر له وقت بحثه، فأنت ببساطة خارج قائمة خياراته — مهما كان منتجك أفضل.</p>
+        <div class="card" data-reveal>
+          <div class="badge">03</div>
+          <div class="card-title">يبحث ولا يجدك</div>
+          <p>إن لم تظهر له لحظة بحثه، فأنت خارج قائمة خياراته ببساطة — مهما كان منتجك أفضل.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 2. من يربح السوق اليوم ===== -->
-  <section style="padding:3rem 0;background:#ECE6D9">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div data-reveal style="margin-bottom:1.8rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#C97B4A;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-          <span style="color:#C97B4A">//</span>الفرصة
-        </div>
-        <h2 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.55rem;line-height:1.35;margin-bottom:.6rem">من يربح السوق اليوم؟</h2>
-        <p style="color:#8B909B;font-size:.92rem;max-width:34rem">لم يعد الأكبر أو الأقدم هو من يكسب — بل الأسرع وصولاً والأقدر على بناء الثقة وتسهيل القرار.</p>
+  <!-- ===== 2. الفرصة ===== -->
+  <section class="section s-beige">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow"><b>//</b> الفرصة</div>
+        <h2 class="h2">من يربح السوق اليوم؟</h2>
+        <p class="lead">لم يعد الأكبر حجمًا ولا الأقدم اسمًا هو من يكسب، بل الأسرع وصولاً والأقدر على بناء الثقة وتسهيل القرار.</p>
       </div>
-      <div data-reveal style="display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
-        <!-- ليس بالضرورة من يملك -->
-        <div style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:16px;padding:1.2rem 1.3rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8B909B;margin-bottom:.8rem">// ليس بالضرورة من يملك</div>
-          <div style="display:flex;flex-direction:column;gap:.7rem">
-            <div style="color:#B7BBC3;font-size:.95rem;text-decoration:line-through">أكبر معرض</div>
-            <div style="color:#B7BBC3;font-size:.95rem;text-decoration:line-through">أفضل منتج</div>
-            <div style="color:#B7BBC3;font-size:.95rem;text-decoration:line-through">أقدم اسم</div>
-          </div>
+      <div class="grid c2" data-reveal>
+        <div class="cmp" style="background:#fff;border:1px solid var(--line)">
+          <div class="cmp-head" style="color:var(--muted)">// ليس بالضرورة من يملك</div>
+          <div class="cmp-row strike">أكبر معرض</div>
+          <div class="cmp-row strike">أفضل منتج</div>
+          <div class="cmp-row strike">أقدم اسم</div>
         </div>
-        <!-- بل غالبًا من -->
-        <div style="background:#14161A;color:#fff;border-radius:16px;padding:1.2rem 1.3rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#4FC4B6;margin-bottom:.8rem">// بل غالبًا من</div>
-          <div style="display:flex;flex-direction:column;gap:.7rem">
-            <div style="font-weight:800;font-size:.98rem;display:flex;align-items:center;gap:.5rem;font-family:'IBM Plex Sans Arabic',sans-serif"><span style="color:#2FA89A;font-weight:800">✓</span>يظهر أولاً</div>
-            <div style="font-weight:800;font-size:.98rem;display:flex;align-items:center;gap:.5rem;font-family:'IBM Plex Sans Arabic',sans-serif"><span style="color:#2FA89A;font-weight:800">✓</span>يبني الثقة أسرع</div>
-            <div style="font-weight:800;font-size:.98rem;display:flex;align-items:center;gap:.5rem;font-family:'IBM Plex Sans Arabic',sans-serif"><span style="color:#2FA89A;font-weight:800">✓</span>يسهّل قرار الشراء</div>
-          </div>
+        <div class="cmp s-dark">
+          <div class="cmp-head" style="color:var(--teal-2)">// بل غالبًا من</div>
+          <div class="cmp-row yes"><span class="ck">✓</span> يظهر أولاً</div>
+          <div class="cmp-row yes"><span class="ck">✓</span> يبني الثقة أسرع</div>
+          <div class="cmp-row yes"><span class="ck">✓</span> يُسهّل قرار الشراء</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== 3. رحلة العميل ===== -->
-  <section style="padding:3rem 0;background:#14161A;color:#fff">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div data-reveal style="margin-bottom:1.8rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#4FC4B6;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-          <span style="color:#C97B4A">//</span>من بحث إلى عملية شراء
-        </div>
-        <h2 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.55rem;line-height:1.35;margin-bottom:.6rem">كيف يتحوّل الباحث إلى عميل؟</h2>
-        <p style="color:#B7BBC3;font-size:.92rem;max-width:34rem">في كل خطوة من هذه الرحلة، إمّا أن تكسب العميل أو تخسره. ومنظومتنا مصمّمة لتساعدك على كسبه في كل خطوة.</p>
+  <section class="section s-dark">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow"><b>//</b> سلوك العميل</div>
+        <h2 class="h2">كيف يتحوّل الباحث إلى عميل؟</h2>
+        <p class="lead">في كل خطوة من هذه الرحلة تكسب العميل أو تخسره. وهنا تتدخّل المنظومة لترجّح كفتك في كل مرة.</p>
       </div>
-      <div data-reveal style="display:flex;flex-wrap:wrap;align-items:stretch;gap:.6rem">
-        <!-- step -->
-        <div style="flex:1 1 130px;min-width:120px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem .8rem;text-align:center">
-          <div style="font-size:1.6rem;margin-bottom:.4rem">🔍</div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#8B909B;margin-bottom:.2rem">٠١</div>
-          <div style="font-weight:800;font-size:.92rem;font-family:'IBM Plex Sans Arabic',sans-serif">يبحث</div>
-        </div>
-        <div style="display:flex;align-items:center;color:#2FA89A;font-size:1.2rem;font-weight:800">←</div>
-        <div style="flex:1 1 130px;min-width:120px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem .8rem;text-align:center">
-          <div style="font-size:1.6rem;margin-bottom:.4rem">📱</div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#8B909B;margin-bottom:.2rem">٠٢</div>
-          <div style="font-weight:800;font-size:.92rem;font-family:'IBM Plex Sans Arabic',sans-serif">يكتشف نشاطك</div>
-        </div>
-        <div style="display:flex;align-items:center;color:#2FA89A;font-size:1.2rem;font-weight:800">←</div>
-        <div style="flex:1 1 130px;min-width:120px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem .8rem;text-align:center">
-          <div style="font-size:1.6rem;margin-bottom:.4rem">🤝</div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#8B909B;margin-bottom:.2rem">٠٣</div>
-          <div style="font-weight:800;font-size:.92rem;font-family:'IBM Plex Sans Arabic',sans-serif">يثق بك</div>
-        </div>
-        <div style="display:flex;align-items:center;color:#2FA89A;font-size:1.2rem;font-weight:800">←</div>
-        <div style="flex:1 1 130px;min-width:120px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem .8rem;text-align:center">
-          <div style="font-size:1.6rem;margin-bottom:.4rem">💬</div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#8B909B;margin-bottom:.2rem">٠٤</div>
-          <div style="font-weight:800;font-size:.92rem;font-family:'IBM Plex Sans Arabic',sans-serif">يتواصل</div>
-        </div>
-        <div style="display:flex;align-items:center;color:#2FA89A;font-size:1.2rem;font-weight:800">←</div>
-        <div style="flex:1 1 130px;min-width:120px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1rem .8rem;text-align:center">
-          <div style="font-size:1.6rem;margin-bottom:.4rem">🏢</div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#8B909B;margin-bottom:.2rem">٠٥</div>
-          <div style="font-weight:800;font-size:.92rem;font-family:'IBM Plex Sans Arabic',sans-serif">يزور المعرض</div>
-        </div>
-        <div style="display:flex;align-items:center;color:#2FA89A;font-size:1.2rem;font-weight:800">←</div>
-        <div style="flex:1 1 130px;min-width:120px;background:linear-gradient(135deg,#2FA89A,#1f7d72);border:1px solid #2FA89A;border-radius:14px;padding:1rem .8rem;text-align:center">
-          <div style="font-size:1.6rem;margin-bottom:.4rem">💰</div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#0c1614;margin-bottom:.2rem">٠٦</div>
-          <div style="font-weight:800;font-size:.92rem;color:#0c1614;font-family:'IBM Plex Sans Arabic',sans-serif">يشتري</div>
+      <div class="flow" data-reveal>
+        <div class="card ghost"><div class="badge">01</div><div class="t">يبحث</div><div class="d">عن منتج أو خدمة كالتي تقدّمها</div></div>
+        <div class="card ghost"><div class="badge">02</div><div class="t">يكتشف نشاطك</div><div class="d">يظهر أمامه ضمن الخيارات</div></div>
+        <div class="card ghost"><div class="badge">03</div><div class="t">يثق بك</div><div class="d">يطمئن من العرض والتقييمات</div></div>
+        <div class="card ghost"><div class="badge">04</div><div class="t">يتواصل</div><div class="d">يسأل ويحصل على رد فوري</div></div>
+        <div class="card ghost"><div class="badge">05</div><div class="t">يزور المعرض</div><div class="d">وقد حسم قراره مسبقًا</div></div>
+        <div class="card ghost" style="background:linear-gradient(135deg,var(--teal),var(--teal-deep));border-color:var(--teal)">
+          <div class="badge badge-fill" style="background:rgba(8,17,15,.18);color:#08110F">06</div>
+          <div class="t" style="color:#08110F">يشتري</div><div class="d" style="color:#08110F;opacity:.85">وتبدأ علاقة بيع مستمرة</div>
         </div>
       </div>
-      <!-- bridge to system -->
-      <div data-reveal style="margin-top:1.8rem;border-inline-start:3px solid #2FA89A;padding-inline-start:1rem">
-        <p style="color:#B7BBC3;font-size:.95rem;margin:0">النمو اليوم لا يعتمد فقط على جودة المنتج، بل على قدرتك على الظهور وبناء الثقة وتسهيل التواصل.</p>
-        <p style="color:#fff;font-weight:800;font-size:1.08rem;margin-top:.3rem;font-family:'IBM Plex Sans Arabic',sans-serif">ولهذا صمّمنا منظومة أثر للنمو الرقمي.</p>
+      <div class="quote" data-reveal style="margin-top:2rem">
+        <p class="q1">النمو اليوم لا يعتمد على جودة المنتج وحدها، بل على قدرتك على الظهور وبناء الثقة وتسهيل التواصل.</p>
+        <p class="q2">ولهذا صمّمنا منظومة تمكين النمو.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== 4. منظومة أثر للنمو الرقمي (رحلة واحدة) ===== -->
-  <section style="padding:3rem 0">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div data-reveal style="margin-bottom:1.8rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#C97B4A;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-          <span style="color:#C97B4A">//</span>الحل — منظومة واحدة لا خدمات منفصلة
-        </div>
-        <h2 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.55rem;line-height:1.35;margin-bottom:.6rem">منظومة أثر للنمو الرقمي</h2>
-        <p style="color:#8B909B;font-size:.92rem;max-width:38rem">مجموعة متكاملة من الحلول تعمل معًا لمساعدة المحلات والمعارض على الوصول إلى عملاء أكثر، وبناء الثقة، وتحويل الاهتمام إلى مبيعات. ليست خطوات منفصلة، بل <strong style="color:#1C1E22;font-weight:800">رحلة واحدة متصلة</strong>:</p>
+  <!-- ===== 4. الحل / المنظومة ===== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow"><b>//</b> الحل</div>
+        <h2 class="h2">منظومة تمكين النمو</h2>
+        <p class="lead">حلول متكاملة تعمل معًا — لا خدمات منفصلة — لمساعدة نشاطك على الوصول إلى عملاء أكثر، وبناء الثقة، وتحويل الاهتمام إلى مبيعات. تتسلسل كرحلة واحدة متّصلة:</p>
       </div>
-      <!-- the system as a connected stack (distinct layout from the customer journey) -->
-      <div data-reveal style="display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
-        <div style="background:#fff;border:1px solid rgba(20,22,26,.12);border-inline-start:3px solid #2FA89A;border-radius:14px;padding:1.1rem 1.2rem;text-align:start">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#C97B4A;margin-bottom:.3rem">٠١</div>
-          <div style="font-weight:800;font-size:.95rem;font-family:'IBM Plex Sans Arabic',sans-serif;margin-bottom:.2rem">الظهور والوصول</div>
-          <p style="font-size:.76rem;color:#8B909B">تظهر أولًا أمام من يبحث عن منتجك</p>
-        </div>
-        <div style="background:#fff;border:1px solid rgba(20,22,26,.12);border-inline-start:3px solid #2FA89A;border-radius:14px;padding:1.1rem 1.2rem;text-align:start">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#C97B4A;margin-bottom:.3rem">٠٢</div>
-          <div style="font-weight:800;font-size:.95rem;font-family:'IBM Plex Sans Arabic',sans-serif;margin-bottom:.2rem">المعرض الرقمي</div>
-          <p style="font-size:.76rem;color:#8B909B">يستعرض منتجاتك ويبني الثقة قبل الزيارة</p>
-        </div>
-        <div style="background:#fff;border:1px solid rgba(20,22,26,.12);border-inline-start:3px solid #2FA89A;border-radius:14px;padding:1.1rem 1.2rem;text-align:start">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#C97B4A;margin-bottom:.3rem">٠٣</div>
-          <div style="font-weight:800;font-size:.95rem;font-family:'IBM Plex Sans Arabic',sans-serif;margin-bottom:.2rem">المحتوى والعروض</div>
-          <p style="font-size:.76rem;color:#8B909B">يحافظ على اهتمامه ويحفّز قراره</p>
-        </div>
-        <div style="background:#fff;border:1px solid rgba(20,22,26,.12);border-inline-start:3px solid #2FA89A;border-radius:14px;padding:1.1rem 1.2rem;text-align:start">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#C97B4A;margin-bottom:.3rem">٠٤</div>
-          <div style="font-weight:800;font-size:.95rem;font-family:'IBM Plex Sans Arabic',sans-serif;margin-bottom:.2rem">الواتساب الذكي</div>
-          <p style="font-size:.76rem;color:#8B909B">يرد على استفساره فورًا على مدار الساعة</p>
-        </div>
-        <div style="background:#fff;border:1px solid rgba(20,22,26,.12);border-inline-start:3px solid #2FA89A;border-radius:14px;padding:1.1rem 1.2rem;text-align:start">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#C97B4A;margin-bottom:.3rem">٠٥</div>
-          <div style="font-weight:800;font-size:.95rem;font-family:'IBM Plex Sans Arabic',sans-serif;margin-bottom:.2rem">المتابعة والتسويق</div>
-          <p style="font-size:.76rem;color:#8B909B">يعيد جذبه ويحوّل اهتمامه إلى قرار</p>
-        </div>
-        <div style="background:linear-gradient(135deg,#2FA89A,#1f7d72);border:1px solid #2FA89A;border-radius:14px;padding:1.1rem 1.2rem;text-align:start">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#0c1614;margin-bottom:.3rem">٠٦</div>
-          <div style="font-weight:800;font-size:.95rem;color:#0c1614;font-family:'IBM Plex Sans Arabic',sans-serif;margin-bottom:.2rem">عملاء ومبيعات أكثر</div>
-          <p style="font-size:.76rem;color:#0c1614;opacity:.85">النتيجة التي تعمل المنظومة كلها لأجلها</p>
-        </div>
-      </div>
-      <!-- components working together -->
-      <div data-reveal style="margin-top:1.6rem;background:#14161A;color:#fff;border-radius:16px;padding:1.3rem 1.3rem;text-align:center">
-        <p style="color:#B7BBC3;font-size:.86rem;margin-bottom:.9rem">خمسة مكوّنات تعمل معًا كنظام واحد — لا قيمة لأحدها منفردًا:</p>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem">
-          <span style="font-size:.82rem;font-weight:800;background:rgba(47,168,154,.15);color:#4FC4B6;border-radius:99px;padding:.35rem .9rem;font-family:'IBM Plex Sans Arabic',sans-serif">المعرض الرقمي</span>
-          <span style="display:flex;align-items:center;color:#2FA89A;font-weight:800">+</span>
-          <span style="font-size:.82rem;font-weight:800;background:rgba(47,168,154,.15);color:#4FC4B6;border-radius:99px;padding:.35rem .9rem;font-family:'IBM Plex Sans Arabic',sans-serif">الواتساب الذكي</span>
-          <span style="display:flex;align-items:center;color:#2FA89A;font-weight:800">+</span>
-          <span style="font-size:.82rem;font-weight:800;background:rgba(47,168,154,.15);color:#4FC4B6;border-radius:99px;padding:.35rem .9rem;font-family:'IBM Plex Sans Arabic',sans-serif">خرائط جوجل</span>
-          <span style="display:flex;align-items:center;color:#2FA89A;font-weight:800">+</span>
-          <span style="font-size:.82rem;font-weight:800;background:rgba(47,168,154,.15);color:#4FC4B6;border-radius:99px;padding:.35rem .9rem;font-family:'IBM Plex Sans Arabic',sans-serif">المحتوى</span>
-          <span style="display:flex;align-items:center;color:#2FA89A;font-weight:800">+</span>
-          <span style="font-size:.82rem;font-weight:800;background:rgba(47,168,154,.15);color:#4FC4B6;border-radius:99px;padding:.35rem .9rem;font-family:'IBM Plex Sans Arabic',sans-serif">التسويق</span>
+      <div class="flow" data-reveal>
+        <div class="card"><div class="badge">01</div><div class="t">الظهور والوصول</div><div class="d">تظهر أولاً أمام من يبحث عن منتجك</div></div>
+        <div class="card"><div class="badge">02</div><div class="t">المعرض الرقمي</div><div class="d">يستعرض منتجاتك ويبني الثقة قبل الزيارة</div></div>
+        <div class="card"><div class="badge">03</div><div class="t">المحتوى والعروض</div><div class="d">يحافظ على اهتمامه ويحفّز قراره</div></div>
+        <div class="card"><div class="badge">04</div><div class="t">الواتساب الذكي</div><div class="d">يرد على استفساره فورًا على مدار الساعة</div></div>
+        <div class="card"><div class="badge">05</div><div class="t">المتابعة والتسويق</div><div class="d">يعيد جذبه ويحوّل اهتمامه إلى قرار</div></div>
+        <div class="card" style="background:linear-gradient(135deg,var(--teal),var(--teal-deep));border-color:var(--teal)">
+          <div class="badge" style="background:rgba(8,17,15,.18);color:#08110F">06</div>
+          <div class="t" style="color:#08110F">عملاء ومبيعات أكثر</div><div class="d" style="color:#08110F;opacity:.85">النتيجة التي تعمل المنظومة كلها لأجلها</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 5. الفوائد والنتائج ===== -->
-  <section style="padding:3rem 0;background:#ECE6D9">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div data-reveal style="margin-bottom:1.8rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#C97B4A;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-          <span style="color:#C97B4A">//</span>لا نبدأ بالأدوات، بل بالنتائج
-        </div>
-        <h2 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.55rem;line-height:1.35;margin-bottom:.6rem">ماذا تكسب فعليًا؟</h2>
-        <p style="color:#8B909B;font-size:.92rem;max-width:34rem">كل نتيجة تجارية تريدها، نربطها بالأداة التي تحقّقها — لا أدوات بلا هدف.</p>
+  <!-- ===== 5. النتائج ===== -->
+  <section class="section s-beige">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow"><b>//</b> النتائج</div>
+        <h2 class="h2">ماذا يكسب نشاطك فعليًا؟</h2>
+        <p class="lead">لا نبدأ من الأدوات، بل من النتيجة التجارية التي تهمّك:</p>
       </div>
-      <div style="display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:1.1rem 1.2rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:#C97B4A;margin-bottom:.35rem">النتيجة</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.02rem;margin-bottom:.6rem">الوصول إلى عملاء أكثر</h4>
-          <div style="display:flex;flex-wrap:wrap;gap:.4rem">
-            <span style="font-size:.74rem;color:#1f7d72;background:rgba(47,168,154,.12);border-radius:99px;padding:.2rem .6rem">خرائط جوجل</span>
-            <span style="font-size:.74rem;color:#1f7d72;background:rgba(47,168,154,.12);border-radius:99px;padding:.2rem .6rem">التسويق</span>
-          </div>
-        </div>
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:1.1rem 1.2rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:#C97B4A;margin-bottom:.35rem">النتيجة</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.02rem;margin-bottom:.6rem">بناء الثقة قبل الزيارة</h4>
-          <div style="display:flex;flex-wrap:wrap;gap:.4rem">
-            <span style="font-size:.74rem;color:#1f7d72;background:rgba(47,168,154,.12);border-radius:99px;padding:.2rem .6rem">المعرض الرقمي</span>
-            <span style="font-size:.74rem;color:#1f7d72;background:rgba(47,168,154,.12);border-radius:99px;padding:.2rem .6rem">المحتوى</span>
-          </div>
-        </div>
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:1.1rem 1.2rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:#C97B4A;margin-bottom:.35rem">النتيجة</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.02rem;margin-bottom:.6rem">استقبال الاستفسارات ٢٤ ساعة</h4>
-          <div style="display:flex;flex-wrap:wrap;gap:.4rem">
-            <span style="font-size:.74rem;color:#1f7d72;background:rgba(47,168,154,.12);border-radius:99px;padding:.2rem .6rem">الواتساب الذكي</span>
-          </div>
-        </div>
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:1.1rem 1.2rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:#C97B4A;margin-bottom:.35rem">النتيجة</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.02rem;margin-bottom:.6rem">دعم التسويق الرقمي</h4>
-          <div style="display:flex;flex-wrap:wrap;gap:.4rem">
-            <span style="font-size:.74rem;color:#1f7d72;background:rgba(47,168,154,.12);border-radius:99px;padding:.2rem .6rem">المحتوى</span>
-            <span style="font-size:.74rem;color:#1f7d72;background:rgba(47,168,154,.12);border-radius:99px;padding:.2rem .6rem">الحملات الموجّهة</span>
-          </div>
-        </div>
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:1.1rem 1.2rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:#C97B4A;margin-bottom:.35rem">النتيجة</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.02rem;margin-bottom:.6rem">زيادة الانتشار</h4>
-          <div style="display:flex;flex-wrap:wrap;gap:.4rem">
-            <span style="font-size:.74rem;color:#1f7d72;background:rgba(47,168,154,.12);border-radius:99px;padding:.2rem .6rem">المحتوى</span>
-            <span style="font-size:.74rem;color:#1f7d72;background:rgba(47,168,154,.12);border-radius:99px;padding:.2rem .6rem">خرائط جوجل</span>
-          </div>
-        </div>
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:1.1rem 1.2rem">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:#C97B4A;margin-bottom:.35rem">النتيجة</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1.02rem;margin-bottom:.6rem">تحويل الاهتمام إلى مبيعات</h4>
-          <div style="display:flex;flex-wrap:wrap;gap:.4rem">
-            <span style="font-size:.74rem;color:#1f7d72;background:rgba(47,168,154,.12);border-radius:99px;padding:.2rem .6rem">المنظومة كاملة</span>
-          </div>
-        </div>
+      <div class="grid c3">
+        <div class="card out" data-reveal><span class="ic">🌍</span><div><div class="card-title">وصول أوسع</div><p>تظهر أمام من يبحث عن منتجك فعلاً، لا من يمرّ مصادفة.</p></div></div>
+        <div class="card out" data-reveal><span class="ic">🤝</span><div><div class="card-title">ثقة مُسبقة</div><p>يعرفك العميل ويطمئن إليك قبل أن يزورك.</p></div></div>
+        <div class="card out" data-reveal><span class="ic">⏱️</span><div><div class="card-title">حضور دائم</div><p>استفسارات عملائك لا تنتظر انتهاء الدوام.</p></div></div>
+        <div class="card out" data-reveal><span class="ic">🎯</span><div><div class="card-title">تسويق موجَّه</div><p>تصل رسالتك إلى من يهمّه عرضك تحديدًا.</p></div></div>
+        <div class="card out" data-reveal><span class="ic">📣</span><div><div class="card-title">انتشار أكبر</div><p>يتردّد اسم نشاطك في سوقك المحلي.</p></div></div>
+        <div class="card out" data-reveal><span class="ic">💰</span><div><div class="card-title">فرص بيع حقيقية</div><p>يتحوّل الاهتمام إلى قرار شراء فعلي.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 6. لماذا نستطيع مساعدتك ===== -->
-  <section style="padding:3rem 0">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div data-reveal style="margin-bottom:1.8rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#C97B4A;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-          <span style="color:#C97B4A">//</span>الثقة
-        </div>
-        <h2 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.55rem;line-height:1.35;margin-bottom:.6rem">لماذا نستطيع مساعدتك؟</h2>
-        <p style="color:#8B909B;font-size:.92rem;max-width:38rem">لأننا لسنا فريقًا تقنيًا فقط. نحن نجمع بين خبرة الأعمال وتقنية المعلومات والأدوات الحديثة الذكية والتسويق وخدمة العملاء وجودة التنفيذ — وهذا ما يجعلنا نفهم الواقع الحقيقي للمحلات والمعارض، لا مجرد بناء أدوات.</p>
+  <!-- ===== 6. الثقة / لماذا نحن ===== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow"><b>//</b> لماذا نحن</div>
+        <h2 class="h2">لماذا نستطيع مساعدتك؟</h2>
+        <p class="lead">لأننا لسنا فريقًا تقنيًا فحسب. نجمع بين خبرة الأعمال وتقنية المعلومات والأدوات الحديثة الذكية والتسويق وخدمة العملاء وجودة التنفيذ — وهذا ما يجعلنا نفهم واقع المحلات والمعارض، لا أن نبني أدوات فقط.</p>
       </div>
-      <!-- six pillars -->
-      <div data-reveal style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.4rem">
-        <span style="font-size:.82rem;font-weight:800;background:#14161A;color:#4FC4B6;border-radius:99px;padding:.4rem 1rem;font-family:'IBM Plex Sans Arabic',sans-serif">خبرة الأعمال</span>
-        <span style="font-size:.82rem;font-weight:800;background:#14161A;color:#4FC4B6;border-radius:99px;padding:.4rem 1rem;font-family:'IBM Plex Sans Arabic',sans-serif">تقنية المعلومات</span>
-        <span style="font-size:.82rem;font-weight:800;background:#14161A;color:#4FC4B6;border-radius:99px;padding:.4rem 1rem;font-family:'IBM Plex Sans Arabic',sans-serif">أدوات حديثة ذكية</span>
-        <span style="font-size:.82rem;font-weight:800;background:#14161A;color:#4FC4B6;border-radius:99px;padding:.4rem 1rem;font-family:'IBM Plex Sans Arabic',sans-serif">التسويق</span>
-        <span style="font-size:.82rem;font-weight:800;background:#14161A;color:#4FC4B6;border-radius:99px;padding:.4rem 1rem;font-family:'IBM Plex Sans Arabic',sans-serif">خدمة العملاء</span>
-        <span style="font-size:.82rem;font-weight:800;background:#14161A;color:#4FC4B6;border-radius:99px;padding:.4rem 1rem;font-family:'IBM Plex Sans Arabic',sans-serif">جودة التنفيذ</span>
+      <div class="pills" data-reveal>
+        <span class="pill">خبرة الأعمال</span>
+        <span class="pill">تقنية المعلومات</span>
+        <span class="pill">أدوات حديثة ذكية</span>
+        <span class="pill">التسويق</span>
+        <span class="pill">خدمة العملاء</span>
+        <span class="pill">جودة التنفيذ</span>
       </div>
-      <div style="display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:16px;padding:1.2rem">
-          <div style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#2FA89A,#C97B4A);margin-bottom:.7rem"></div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1rem;margin-bottom:.15rem">نفهم لغة صاحب العمل</h4>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#C97B4A;margin-bottom:.5rem">خبرة الأعمال وخدمة العملاء</div>
-          <p style="font-size:.84rem;color:#8B909B">خبرة طويلة في تقنية المعلومات وخدمات الأعمال — نترجم همّ صاحب المحل إلى حلول عملية تزيد مبيعاته فعلاً.</p>
+      <div class="grid c3">
+        <div class="card" data-reveal>
+          <div class="iconb">🧭</div>
+          <div class="card-title">نفهم لغة صاحب العمل</div>
+          <div class="eyebrow" style="margin:.1rem 0 .6rem">خبرة الأعمال وخدمة العملاء</div>
+          <p>خبرة طويلة في تقنية المعلومات وخدمات الأعمال تجعلنا نترجم همّ صاحب النشاط إلى حلول عملية تزيد مبيعاته.</p>
         </div>
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:16px;padding:1.2rem">
-          <div style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#2FA89A,#C97B4A);margin-bottom:.7rem"></div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1rem;margin-bottom:.15rem">نحوّل الأدوات الحديثة الذكية إلى مبيعات</h4>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#C97B4A;margin-bottom:.5rem">التقنية والأدوات الذكية والتسويق</div>
-          <p style="font-size:.84rem;color:#8B909B">نبني كل أداة أتمتة وتسويق ذكي بحيث تخدم قرار الشراء مباشرة — لا تقنية للاستعراض.</p>
+        <div class="card" data-reveal>
+          <div class="iconb">⚙️</div>
+          <div class="card-title">نحوّل الأدوات الذكية إلى مبيعات</div>
+          <div class="eyebrow" style="margin:.1rem 0 .6rem">التقنية والأدوات الذكية والتسويق</div>
+          <p>نبني كل أداة أتمتة وتسويق ذكي لتخدم قرار الشراء مباشرة — لا تقنية للاستعراض.</p>
         </div>
-        <div data-reveal style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:16px;padding:1.2rem">
-          <div style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#2FA89A,#C97B4A);margin-bottom:.7rem"></div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:1rem;margin-bottom:.15rem">نحرص على وصول القيمة للعميل</h4>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#C97B4A;margin-bottom:.5rem">جودة التنفيذ ونجاح الأعمال</div>
-          <p style="font-size:.84rem;color:#8B909B">خبرة في العلاقات والمبيعات وإدارة الجودة — نتابع سير العمل ونحرص على أن كل حل نقدّمه يخدم نتيجة ملموسة.</p>
+        <div class="card" data-reveal>
+          <div class="iconb">✅</div>
+          <div class="card-title">نحرص على وصول القيمة</div>
+          <div class="eyebrow" style="margin:.1rem 0 .6rem">جودة التنفيذ ونجاح الأعمال</div>
+          <p>خبرة في العلاقات والمبيعات وإدارة الجودة نتابع بها سير العمل لنحرص على أن كل حل يخدم نتيجة ملموسة.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== 7. خطوات العمل ===== -->
-  <section style="padding:3rem 0;background:#ECE6D9">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div data-reveal style="margin-bottom:1.8rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#C97B4A;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-          <span style="color:#C97B4A">//</span>كيف نبدأ
-        </div>
-        <h2 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.55rem;line-height:1.35">من أول مكالمة حتى تبدأ النتائج</h2>
+  <section class="section s-beige">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow"><b>//</b> كيف نبدأ</div>
+        <h2 class="h2">من أول استشارة حتى تبدأ النتائج</h2>
       </div>
-      <div style="position:relative;padding-inline-start:2.2rem">
-        <div style="position:absolute;inset-inline-start:.78rem;top:.3rem;bottom:.3rem;width:1px;background:repeating-linear-gradient(180deg, #2FA89A 0 4px, transparent 4px 8px)"></div>
-        <div data-reveal style="position:relative;padding-bottom:1.6rem">
-          <div style="position:absolute;inset-inline-start:-2.2rem;top:0;width:1.6rem;height:1.6rem;border-radius:50%;background:#14161A;color:#4FC4B6;font-family:'IBM Plex Mono',monospace;font-size:.7rem;display:flex;align-items:center;justify-content:center">١</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.96rem;margin-bottom:.3rem">استشارة تعريفية (١٥ دقيقة)</h4>
-          <p style="font-size:.84rem;color:#8B909B">نفهم محلك وأهدافك، ونحدّد أسرع الفرص لكسب عملاء جدد.</p>
+      <div class="tl">
+        <div class="tl-item" data-reveal><div class="tl-num">1</div>
+          <h4>استشارة تعريفية (15 دقيقة)</h4>
+          <p>نفهم نشاطك وأهدافك، ونحدّد أسرع الفرص لكسب عملاء جدد.</p>
         </div>
-        <div data-reveal style="position:relative;padding-bottom:1.6rem">
-          <div style="position:absolute;inset-inline-start:-2.2rem;top:0;width:1.6rem;height:1.6rem;border-radius:50%;background:#14161A;color:#4FC4B6;font-family:'IBM Plex Mono',monospace;font-size:.7rem;display:flex;align-items:center;justify-content:center">٢</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.96rem;margin-bottom:.3rem">نموذج على منتجاتك الفعلية</h4>
-          <p style="font-size:.84rem;color:#8B909B">تشوف كيف سيتعامل عميلك مع منظومتك الرقمية — قبل أي التزام.</p>
+        <div class="tl-item" data-reveal><div class="tl-num">2</div>
+          <h4>نموذج على منتجاتك الفعلية</h4>
+          <p>ترى كيف سيتعامل عميلك مع منظومتك الرقمية قبل أي التزام.</p>
         </div>
-        <div data-reveal style="position:relative;padding-bottom:1.6rem">
-          <div style="position:absolute;inset-inline-start:-2.2rem;top:0;width:1.6rem;height:1.6rem;border-radius:50%;background:#14161A;color:#4FC4B6;font-family:'IBM Plex Mono',monospace;font-size:.7rem;display:flex;align-items:center;justify-content:center">٣</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.96rem;margin-bottom:.3rem">التنفيذ والإطلاق</h4>
-          <p style="font-size:.84rem;color:#8B909B">نجهّز المنظومة كاملة ونطلقها خلال أسابيع، لا أشهر.</p>
+        <div class="tl-item" data-reveal><div class="tl-num">3</div>
+          <h4>التنفيذ والإطلاق</h4>
+          <p>نُجهّز المنظومة كاملة ونُطلقها خلال أسابيع لا أشهر.</p>
         </div>
-        <div data-reveal style="position:relative">
-          <div style="position:absolute;inset-inline-start:-2.2rem;top:0;width:1.6rem;height:1.6rem;border-radius:50%;background:#14161A;color:#4FC4B6;font-family:'IBM Plex Mono',monospace;font-size:.7rem;display:flex;align-items:center;justify-content:center">٤</div>
-          <h4 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.96rem;margin-bottom:.3rem">متابعة وتحسين مستمر</h4>
-          <p style="font-size:.84rem;color:#8B909B">تقرير شهري بالأرقام، وتحسين دائم — العلاقة لا تنتهي بالإطلاق.</p>
+        <div class="tl-item" data-reveal><div class="tl-num">4</div>
+          <h4>متابعة وتحسين مستمر</h4>
+          <p>تقرير شهري بالأرقام وتحسين دائم — العلاقة لا تنتهي بالإطلاق.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 8. مدعوم بتقنيات عالمية موثوقة (قسم ثقة مصغّر) ===== -->
-  <section style="padding:2.2rem 0;background:#14161A">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem;text-align:center">
-      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.12em;color:#8B909B;text-transform:uppercase;margin-bottom:1rem">مدعوم بتقنيات عالمية موثوقة</div>
-      <div data-reveal style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.5rem">
-        <span style="font-size:.8rem;font-weight:700;color:#8B909B;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:.35rem .9rem;font-family:'IBM Plex Sans Arabic',sans-serif">أدوات حديثة ذكية</span>
-        <span style="font-size:.8rem;font-weight:700;color:#8B909B;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:.35rem .9rem;font-family:'IBM Plex Sans Arabic',sans-serif">واتساب للأعمال</span>
-        <span style="font-size:.8rem;font-weight:700;color:#8B909B;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:.35rem .9rem;font-family:'IBM Plex Sans Arabic',sans-serif">Google Business</span>
-        <span style="font-size:.8rem;font-weight:700;color:#8B909B;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:.35rem .9rem;font-family:'IBM Plex Sans Arabic',sans-serif">تقنيات الويب الحديثة</span>
-        <span style="font-size:.8rem;font-weight:700;color:#8B909B;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:.35rem .9rem;font-family:'IBM Plex Sans Arabic',sans-serif">منصات الأتمتة</span>
+  <!-- ===== 8. التقنيات (شريط ثقة) ===== -->
+  <section class="section-sm s-dark">
+    <div class="wrap center">
+      <div class="eyebrow" style="justify-content:center;color:#8F949D" data-reveal>مدعوم بأدوات وتقنيات عالمية موثوقة</div>
+      <div class="pills" data-reveal style="justify-content:center;margin-bottom:0">
+        <span class="pill pill-soft">أدوات حديثة ذكية</span>
+        <span class="pill pill-soft">واتساب للأعمال</span>
+        <span class="pill pill-soft">Google Business</span>
+        <span class="pill pill-soft">تقنيات الويب الحديثة</span>
+        <span class="pill pill-soft">منصات الأتمتة</span>
       </div>
     </div>
   </section>
 
   <!-- ===== 9. الباقات ===== -->
-  <section style="padding:3rem 0">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div data-reveal style="margin-bottom:1.8rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#C97B4A;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-          <span style="color:#C97B4A">//</span>استثمار واضح
-        </div>
-        <h2 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.55rem;line-height:1.35;margin-bottom:.6rem">ثلاث باقات، بدون مفاجآت</h2>
-        <p style="color:#8B909B;font-size:.92rem;max-width:34rem">تبدأ بالباقة اللي تناسب حجم محلك، وتترقّى وقت ما تبي.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow"><b>//</b> الاستثمار</div>
+        <h2 class="h2">باقات واضحة بلا مفاجآت</h2>
+        <p class="lead">ابدأ بالباقة التي تناسب حجم نشاطك، وارتقِ متى شئت.</p>
       </div>
-      <div data-reveal style="display:flex;align-items:center;gap:.4rem;font-size:.74rem;color:#8B909B;margin-bottom:.9rem">
-        <span style="color:#C97B4A;font-weight:800">↔</span> مرر بين الباقات لمقارنتها
-      </div>
-      <div data-reveal style="display:flex;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.3rem 1.25rem 1rem;margin:0 -1.25rem;-webkit-overflow-scrolling:touch">
-        <!-- النمو — الأكثر طلبًا -->
-        <div style="flex:0 0 85%;max-width:300px;scroll-snap-align:center;background:#fff;border:2px solid #2FA89A;border-radius:18px;padding:1.3rem 1.2rem;position:relative">
-          <div style="position:absolute;top:-.7rem;inset-inline-start:1.1rem;background:#2FA89A;color:#0c1614;font-size:.66rem;font-weight:800;padding:.25rem .65rem;border-radius:99px;font-family:'IBM Plex Sans Arabic',sans-serif">الأكثر طلبًا</div>
-          <div style="font-size:1.1rem;font-weight:800;margin-bottom:.2rem;font-family:'IBM Plex Sans Arabic',sans-serif">النمو</div>
-          <div style="font-size:.78rem;color:#8B909B;margin-bottom:1rem">للمحلات اللي تبي حضور رقمي متكامل وشهري</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:.55rem">
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> معرض رقمي تفاعلي</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> بوت واتساب ذكي</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> محتوى سوشيال ميديا</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> إدارة Google Business</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> تقرير شهري</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem;color:#B7BBC3"><span style="color:#B7BBC3;font-weight:800;flex:0 0 auto">—</span> إعلانات ممولة</li>
+      <div class="pkgs" data-reveal>
+        <div class="pkg feat">
+          <div class="pkg-tag">الأكثر طلبًا</div>
+          <div class="pkg-name">النمو</div>
+          <div class="pkg-sub">للأنشطة التي تريد حضورًا رقميًا متكاملًا ومستمرًا</div>
+          <ul>
+            <li><span class="ck">✓</span> معرض رقمي تفاعلي</li>
+            <li><span class="ck">✓</span> مساعد واتساب ذكي</li>
+            <li><span class="ck">✓</span> محتوى لوسائل التواصل</li>
+            <li><span class="ck">✓</span> إدارة Google Business</li>
+            <li><span class="ck">✓</span> تقرير شهري</li>
+            <li class="off"><span class="ck">—</span> إعلانات مموّلة</li>
           </ul>
         </div>
-        <!-- البداية -->
-        <div style="flex:0 0 85%;max-width:300px;scroll-snap-align:center;background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:18px;padding:1.3rem 1.2rem">
-          <div style="font-size:1.1rem;font-weight:800;margin-bottom:.2rem;font-family:'IBM Plex Sans Arabic',sans-serif">البداية</div>
-          <div style="font-size:.78rem;color:#8B909B;margin-bottom:1rem">للانطلاقة الأولى بأقل تكلفة</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:.55rem">
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> معرض رقمي تفاعلي</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> بوت واتساب ذكي</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem;color:#B7BBC3"><span style="color:#B7BBC3;font-weight:800;flex:0 0 auto">—</span> محتوى سوشيال ميديا</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem;color:#B7BBC3"><span style="color:#B7BBC3;font-weight:800;flex:0 0 auto">—</span> إدارة Google Business</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem;color:#B7BBC3"><span style="color:#B7BBC3;font-weight:800;flex:0 0 auto">—</span> تقرير شهري</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem;color:#B7BBC3"><span style="color:#B7BBC3;font-weight:800;flex:0 0 auto">—</span> إعلانات ممولة</li>
+        <div class="pkg">
+          <div class="pkg-name">البداية</div>
+          <div class="pkg-sub">للانطلاقة الأولى بأقل تكلفة</div>
+          <ul>
+            <li><span class="ck">✓</span> معرض رقمي تفاعلي</li>
+            <li><span class="ck">✓</span> مساعد واتساب ذكي</li>
+            <li class="off"><span class="ck">—</span> محتوى لوسائل التواصل</li>
+            <li class="off"><span class="ck">—</span> إدارة Google Business</li>
+            <li class="off"><span class="ck">—</span> تقرير شهري</li>
+            <li class="off"><span class="ck">—</span> إعلانات مموّلة</li>
           </ul>
         </div>
-        <!-- التميّز -->
-        <div style="flex:0 0 85%;max-width:300px;scroll-snap-align:center;background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:18px;padding:1.3rem 1.2rem">
-          <div style="font-size:1.1rem;font-weight:800;margin-bottom:.2rem;font-family:'IBM Plex Sans Arabic',sans-serif">التميّز</div>
-          <div style="font-size:.78rem;color:#8B909B;margin-bottom:1rem">لمن يبي يتصدّر السوق فعليًا</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:.55rem">
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> معرض رقمي تفاعلي</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> بوت واتساب ذكي</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> محتوى سوشيال ميديا</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> إدارة Google Business</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> تقرير شهري</li>
-            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem"><span style="color:#2FA89A;font-weight:800;flex:0 0 auto">✓</span> إعلانات ممولة</li>
+        <div class="pkg">
+          <div class="pkg-name">التميّز</div>
+          <div class="pkg-sub">لمن يريد أن يتصدّر السوق فعليًا</div>
+          <ul>
+            <li><span class="ck">✓</span> معرض رقمي تفاعلي</li>
+            <li><span class="ck">✓</span> مساعد واتساب ذكي</li>
+            <li><span class="ck">✓</span> محتوى لوسائل التواصل</li>
+            <li><span class="ck">✓</span> إدارة Google Business</li>
+            <li><span class="ck">✓</span> تقرير شهري</li>
+            <li><span class="ck">✓</span> إعلانات مموّلة</li>
           </ul>
         </div>
       </div>
-      <p style="font-size:.8rem;color:#8B909B;margin-top:.8rem">* الأسعار تُحدّد بعد معاينة سريعة لحجم محلك واحتياجك الفعلي.</p>
+      <p style="font-size:.84rem;color:var(--muted);margin-top:1.1rem">* تُحدَّد الأسعار بعد معاينة سريعة لحجم نشاطك واحتياجه الفعلي.</p>
     </div>
   </section>
 
   <!-- ===== 10. الأسئلة الشائعة ===== -->
-  <section style="padding:3rem 0;background:#ECE6D9">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div data-reveal style="margin-bottom:1.8rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#C97B4A;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-          <span style="color:#C97B4A">//</span>قبل ما تبدأ
-        </div>
-        <h2 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.55rem;line-height:1.35">الأسئلة الشائعة</h2>
+  <section class="section s-beige">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow"><b>//</b> قبل أن تبدأ</div>
+        <h2 class="h2">الأسئلة الشائعة</h2>
       </div>
-      <div data-reveal style="display:flex;flex-direction:column;gap:.7rem">
-        <details style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:0 1.2rem">
-          <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.98rem">هل أحتاج خبرة تقنية؟<span class="faq-plus" style="color:#2FA89A;font-size:1.3rem;font-weight:800;transition:transform .2s ease;flex:0 0 auto">+</span></summary>
-          <p style="font-size:.86rem;color:#8B909B;padding-bottom:1.1rem">إطلاقًا. نحن ننفّذ كل شيء بدلًا عنك، وكل أداة مصممة ليستخدمها أي أحد بسهولة. دورك الوحيد أن تركّز على محلك.</p>
+      <div data-reveal>
+        <details><summary>هل أحتاج خبرة تقنية؟<span class="faq-plus">+</span></summary>
+          <p>إطلاقًا. نُنفّذ كل شيء نيابة عنك، وكل أداة مصمّمة ليستخدمها أي شخص بسهولة. دورك الوحيد أن تركّز على نشاطك.</p>
         </details>
-        <details style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:0 1.2rem">
-          <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.98rem">كم يستغرق الإطلاق؟<span class="faq-plus" style="color:#2FA89A;font-size:1.3rem;font-weight:800;transition:transform .2s ease;flex:0 0 auto">+</span></summary>
-          <p style="font-size:.86rem;color:#8B909B;padding-bottom:1.1rem">أسابيع لا أشهر. نبدأ بالأهم الذي يجلب لك عملاء أسرع، ثم نكمّل بقية المنظومة تباعًا.</p>
+        <details><summary>كم يستغرق الإطلاق؟<span class="faq-plus">+</span></summary>
+          <p>أسابيع لا أشهر. نبدأ بالأهمّ الذي يجلب لك عملاء أسرع، ثم نُكمل بقية المنظومة تباعًا.</p>
         </details>
-        <details style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:0 1.2rem">
-          <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.98rem">عندي حسابات سوشيال بالفعل، هل أبدأ من الصفر؟<span class="faq-plus" style="color:#2FA89A;font-size:1.3rem;font-weight:800;transition:transform .2s ease;flex:0 0 auto">+</span></summary>
-          <p style="font-size:.86rem;color:#8B909B;padding-bottom:1.1rem">لا. نبني على ما لديك ونطوّره ليصبح جزءًا من منظومة واحدة تعمل بهدف واضح: تحويل المتابع إلى عميل.</p>
+        <details><summary>لديّ حسابات تواصل اجتماعي بالفعل، هل أبدأ من الصفر؟<span class="faq-plus">+</span></summary>
+          <p>لا. نبني على ما لديك ونطوّره ليصبح جزءًا من منظومة واحدة بهدف واضح: تحويل المتابع إلى عميل.</p>
         </details>
-        <details style="background:#fff;border:1px solid rgba(20,22,26,.12);border-radius:14px;padding:0 1.2rem">
-          <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;font-size:.98rem">كيف أعرف أن المنظومة تعمل فعلًا؟<span class="faq-plus" style="color:#2FA89A;font-size:1.3rem;font-weight:800;transition:transform .2s ease;flex:0 0 auto">+</span></summary>
-          <p style="font-size:.86rem;color:#8B909B;padding-bottom:1.1rem">تقرير شهري واضح بالأرقام يوضح ما صُرف، وما عاد عليك من عملاء واستفسارات ومبيعات — شفافية كاملة.</p>
+        <details><summary>كيف أعرف أن المنظومة تعمل؟<span class="faq-plus">+</span></summary>
+          <p>تقرير شهري واضح بالأرقام يبيّن ما أُنفق وما عاد عليك من عملاء واستفسارات ومبيعات — شفافية كاملة.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- ===== 11. النموذج الحي — شاهد مثالاً حيًا ===== -->
-  <section id="demo" style="padding:3rem 0;background:#F3EFE7;color:#1C1E22">
-    <div style="max-width:920px;margin:0 auto;padding:0 1.25rem">
-      <div data-reveal style="margin-bottom:1.8rem">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#C97B4A;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem">
-          <span style="color:#C97B4A">//</span>دليل حي، مو وعد
-        </div>
-        <h2 style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.55rem;line-height:1.35;margin-bottom:.6rem">شاهد مثالاً حيًا</h2>
-        <p style="color:#8B909B;font-size:.92rem;max-width:38rem">هذا نموذج توضيحي يوضح كيف يمكن لمنظومة أثر للنمو الرقمي أن تساعد نشاطًا تقليديًا على عرض منتجاته بشكل أفضل وبناء الثقة وتسهيل التواصل مع العملاء.</p>
+  <!-- ===== 11. النموذج الحي ===== -->
+  <section id="demo" class="section">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="eyebrow"><b>//</b> دليل واقعي لا مجرد وعد</div>
+        <h2 class="h2">شاهد مثالاً حيًا</h2>
+        <p class="lead">نموذج توضيحي يُبيّن كيف يمكن لمنظومة تمكين النمو أن تساعد نشاطًا تقليديًا على عرض منتجاته بشكل أفضل، وبناء الثقة، وتسهيل التواصل مع عملائه.</p>
       </div>
-      <p data-reveal style="font-size:.84rem;color:#8B909B;margin-bottom:1.3rem">داخل النموذج: معاينة AR · مستشار ذكي · حاسبة تكلفة · بوت واتساب — كلها تعمل أمامك مباشرة.</p>
-      <a data-reveal href="https://aseeaa0e-png.github.io/ardiyat-aldiyar/" target="_blank" rel="noopener" style="background:#2FA89A;color:#0c1614;font-weight:800;font-size:.88rem;padding:.85rem 1.4rem;border-radius:12px;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;font-family:'IBM Plex Sans Arabic',sans-serif">افتح النموذج الحي ↗</a>
+      <p data-reveal style="font-size:.95rem;color:var(--ink-soft);margin-bottom:1.4rem">داخل النموذج: معاينة المنتج · مستشار ذكي · حاسبة تكلفة · مساعد واتساب — جميعها تعمل أمامك مباشرة.</p>
+      <a class="btn" data-reveal href="https://aseeaa0e-png.github.io/ardiyat-aldiyar/" target="_blank" rel="noopener">افتح النموذج الحي ↗</a>
     </div>
   </section>
 
-  <!-- ===== 12. التواصل — الدعوة إلى الإجراء ===== -->
-  <section id="contact" style="padding:3rem 0;background:#14161A;color:#fff">
-    <div style="max-width:920px;margin:0 auto;padding:3.2rem 1.25rem;text-align:center">
-      <h2 data-reveal style="font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.7rem;margin-bottom:.7rem">هل يجدك عملاؤك قبل منافسيك؟</h2>
-      <p data-reveal style="color:#B7BBC3;margin-bottom:1.6rem;font-size:.94rem;max-width:36rem;margin-inline:auto">احجز استشارة مجانية واكتشف كيف يمكن لمنظومة أثر للنمو الرقمي أن تساعد نشاطك على الوصول إلى عملاء أكثر وتحويل الاهتمام إلى مبيعات.</p>
-      <a data-reveal href="https://wa.me/966553353448?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%F0%9F%91%8B%0A%D8%B5%D8%A7%D8%AD%D8%A8%20%D9%85%D8%AD%D9%84%20%D9%88%D8%AD%D8%A7%D8%A8%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A3%D8%AB%D8%B1%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9.%0A%D8%A8%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D8%B1%20%D8%AA%D9%88%D8%A7%D8%B5%D9%84%D9%83%D9%85%20%F0%9F%8C%BF" target="_blank" rel="noopener" style="background:#2FA89A;color:#0c1614;font-weight:800;font-size:.88rem;padding:.85rem 1.4rem;border-radius:12px;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;font-family:'IBM Plex Sans Arabic',sans-serif">📲 احجز استشارة مجانية</a>
+  <!-- ===== 12. التواصل ===== -->
+  <section id="contact" class="section s-dark">
+    <div class="wrap center">
+      <h2 class="h2" data-reveal>هل يجدك عملاؤك قبل منافسيك؟</h2>
+      <p class="lead" data-reveal>احجز استشارة مجانية واكتشف كيف يمكن لمنظومة تمكين النمو أن تساعد نشاطك على الوصول إلى عملاء أكثر وتحويل الاهتمام إلى مبيعات.</p>
+      <a class="btn" data-reveal href="https://wa.me/966553353448?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%F0%9F%91%8B%0A%D8%B5%D8%A7%D8%AD%D8%A8%20%D9%86%D8%B4%D8%A7%D8%B7%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9.%0A%D8%A8%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D8%B1%D9%83%D9%85%20%F0%9F%8C%BF" target="_blank" rel="noopener">📲 احجز استشارة مجانية</a>
     </div>
   </section>
 
-  <footer style="background:#14161A;color:#8B909B;text-align:center;padding:1.4rem 1rem;font-size:.74rem;border-top:1px solid rgba(255,255,255,.1)">
-    أثر الرقمية — منظومة أثر للنمو الرقمي · المنطقة الشرقية والرياض
-  </footer>
+  <footer>تمكين النمو · منظومة النمو الرقمي — المنطقة الشرقية والرياض</footer>
 
   <script>
     (function () {
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // Sheen animation on hero strip
-      if (!reduce) {
-        var sheen = document.getElementById('sheen');
-        if (sheen) setTimeout(function () { sheen.style.animation = 'xsheen 2.1s ease-out 1'; }, 400);
-      }
-
-      // Scroll reveals
       if (reduce) return;
-
-      var els = Array.from(document.querySelectorAll('[data-reveal]'));
+      var els = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
       els.forEach(function (el) {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(16px)';
+        el.style.transform = 'translateY(18px)';
         el.style.transition = 'opacity .6s ease, transform .6s ease';
       });
-
-      function reveal(el) {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      }
-
-      function check() {
+      function reveal(el){ el.style.opacity='1'; el.style.transform='none'; }
+      function check(){
         var vh = window.innerHeight || document.documentElement.clientHeight;
-        els.forEach(function (el) {
+        els.forEach(function (el){
           if (el.style.opacity === '1') return;
           var r = el.getBoundingClientRect();
-          if (r.top < vh * 0.92 && r.bottom > 0) reveal(el);
+          if (r.top < vh*0.92 && r.bottom > 0) reveal(el);
         });
       }
-
       check();
-      window.addEventListener('scroll', check, { passive: true });
-      window.addEventListener('resize', check, { passive: true });
-
-      [120, 350, 700].forEach(function (t) { setTimeout(check, t); });
-      setTimeout(function () { els.forEach(reveal); }, 1500);
+      window.addEventListener('scroll', check, {passive:true});
+      window.addEventListener('resize', check, {passive:true});
+      [120,350,700].forEach(function(t){ setTimeout(check,t); });
+      setTimeout(function(){ els.forEach(reveal); }, 1600);
     })();
   </script>
 
