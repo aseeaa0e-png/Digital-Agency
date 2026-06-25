@@ -38,11 +38,11 @@
        font-size:clamp(2.15rem,5.2vw,3.05rem);line-height:1.22}
     .h2{font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:800;letter-spacing:-.015em;
         font-size:clamp(1.7rem,3.6vw,2.2rem);line-height:1.3;margin-bottom:.7rem}
-    .eyebrow{font-family:'IBM Plex Sans Arabic',sans-serif;font-size:.82rem;font-weight:700;
-        letter-spacing:0;color:#A8551F;
+    .eyebrow{font-family:'IBM Plex Sans Arabic',sans-serif;font-size:.9rem;font-weight:700;
+        letter-spacing:0;color:#7A3C0E;
         display:flex;align-items:center;gap:.5rem;margin-bottom:1.1rem}
     .eyebrow b{font-family:'IBM Plex Mono',monospace;color:var(--teal);font-weight:600}
-    .s-dark .eyebrow{color:#E6975F}
+    .s-dark .eyebrow{color:#F2B080}
     .lead{font-size:1.08rem;color:var(--ink-soft);max-width:44rem;line-height:1.9}
     .s-dark .lead{color:#C3C8D0}
     .head{max-width:46rem;margin-bottom:2.6rem}
@@ -128,8 +128,8 @@
     /* quote bar */
     .quote{border-inline-start:3px solid var(--teal);padding-inline-start:1.1rem;margin-top:1.7rem}
     .quote p{margin:0}
-    .quote .q1{color:#C3C8D0;font-size:.95rem}
-    .quote .q2{color:#fff;font-weight:800;font-size:1.1rem;margin-top:.3rem;
+    .quote .q1{color:var(--ink-soft);font-size:.95rem}
+    .quote .q2{color:var(--ink);font-weight:800;font-size:1.1rem;margin-top:.3rem;
         font-family:'IBM Plex Sans Arabic',sans-serif}
 
     /* compare cols */
@@ -235,6 +235,24 @@
     .center .lead{margin:0 auto 1.8rem}
     footer{background:var(--dark);color:#8F949D;text-align:center;padding:1.6rem 1rem;font-size:.8rem;
         border-top:1px solid var(--line-d)}
+
+    /* ─── Mobile fixes ─── */
+    @media(max-width:560px){
+      /* Flow cards: 1 column on phones (prevents 150px cramped 2-col layout) */
+      .flow{grid-template-columns:1fr}
+      /* Trial banner: stack vertically */
+      .trial{flex-direction:column;gap:.7rem;text-align:center;padding:1.25rem 1.3rem}
+      .trial-star{font-size:1.5rem}
+    }
+    @media(max-width:360px){
+      /* Nav: shrink on iPhone SE to prevent overflow */
+      .brand{font-size:.88rem;gap:.45rem}
+      .btn-sm{font-size:.72rem;padding:.48rem .85rem}
+    }
+    /* FAQ+Demo: stack cleanly on mobile */
+    @media(max-width:620px){
+      .grid.c2[style*="align-items:start"]{gap:1.4rem}
+    }
   </style>
 </head>
 <body>
@@ -313,7 +331,7 @@
       <div class="head" data-reveal>
         <div class="eyebrow"><b>//</b> المشكلة</div>
         <h2 class="h2">الخسارة التي لا تراها</h2>
-        <p class="lead">ليس كل عميل مفقود هو من دخل معرضك ثم غادر. هناك من يبحث الآن عن منتجات كالتي تقدّمها، يقارن الخيارات ويتّخذ قراره قبل أن يزور أي معرض. وإن لم يجد حضورًا واضحًا ومعلومات كافية وتجربة مريحة، فقد يختار سواك دون أن تعلم أنه كان مهتمًا بك أصلاً.</p>
+        <p class="lead">العميل يقرّر ويختار من هاتفه — قبل أن تطأ قدمه معرضك. إن لم تظهر بحضور واضح وتجربة مريحة، فأنت خارج قائمة خياراته.</p>
       </div>
       <div class="grid c3">
         <div class="card" data-reveal>
@@ -335,53 +353,41 @@
     </div>
   </section>
 
-  <!-- ===== 2. الفرصة ===== -->
+  <!-- ===== لماذا نحن ===== -->
   <section class="section s-beige">
     <div class="wrap">
       <div class="head" data-reveal>
-        <div class="eyebrow"><b>//</b> الفرصة</div>
-        <h2 class="h2">من يربح السوق اليوم؟</h2>
-        <p class="lead">في سوق الأرضيات والسيراميك، لم يعد الأكبر مساحةً ولا الأقدم اسمًا هو من يكسب، بل الأسرع وصولاً والأقدر على بناء الثقة وتسهيل القرار.</p>
+        <div class="eyebrow"><b>//</b> لماذا نحن</div>
+        <h2 class="h2">لماذا نستطيع مساعدتك؟</h2>
+        <p class="lead">لأننا لسنا فريقًا تقنيًا فحسب. نجمع بين خبرة الأعمال وتقنية المعلومات والأدوات الحديثة الذكية والتسويق وخدمة العملاء وجودة التنفيذ — وهذا ما يجعلنا نفهم واقع المحلات والمعارض، لا أن نبني أدوات فقط.</p>
       </div>
-      <div class="grid c2" data-reveal>
-        <div class="cmp" style="background:#fff;border:1px solid var(--line)">
-          <div class="cmp-head" style="color:var(--muted)">// ليس بالضرورة من يملك</div>
-          <div class="cmp-row strike">أكبر معرض</div>
-          <div class="cmp-row strike">أفضل منتج</div>
-          <div class="cmp-row strike">أقدم اسم</div>
+      <div class="pills" data-reveal>
+        <span class="pill">خبرة الأعمال</span>
+        <span class="pill">تقنية المعلومات</span>
+        <span class="pill">أدوات حديثة ذكية</span>
+        <span class="pill">التسويق</span>
+        <span class="pill">خدمة العملاء</span>
+        <span class="pill">جودة التنفيذ</span>
+      </div>
+      <div class="grid c3">
+        <div class="card" data-reveal>
+          <div class="iconb">🧭</div>
+          <div class="card-title">نفهم لغة صاحب العمل</div>
+          <div class="eyebrow" style="margin:.1rem 0 .6rem">خبرة الأعمال وخدمة العملاء</div>
+          <p>خبرة في تقنية المعلومات وخدمات الأعمال، مع فهم عميق لقطاع الأرضيات والسيراميك وسلوك مشتريه — نترجم همّ صاحب المعرض إلى حلول تزيد مبيعاته.</p>
         </div>
-        <div class="cmp s-dark">
-          <div class="cmp-head" style="color:var(--teal-2)">// بل غالبًا من</div>
-          <div class="cmp-row yes"><span class="ck">✓</span> يظهر أولاً</div>
-          <div class="cmp-row yes"><span class="ck">✓</span> يبني الثقة أسرع</div>
-          <div class="cmp-row yes"><span class="ck">✓</span> يُسهّل قرار الشراء</div>
+        <div class="card" data-reveal>
+          <div class="iconb">⚙️</div>
+          <div class="card-title">نحوّل الأدوات الذكية إلى مبيعات</div>
+          <div class="eyebrow" style="margin:.1rem 0 .6rem">التقنية والأدوات الذكية والتسويق</div>
+          <p>نبني أتمتة واتساب وإعلانات موجّهة تخدم قرار الشراء مباشرة، لا تقنية للاستعراض.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 3. رحلة العميل ===== -->
-  <section class="section s-dark">
-    <div class="wrap">
-      <div class="head" data-reveal>
-        <div class="eyebrow"><b>//</b> سلوك العميل</div>
-        <h2 class="h2">كيف يتحوّل الباحث إلى عميل؟</h2>
-        <p class="lead">في كل خطوة من هذه الرحلة تكسب العميل أو تخسره. وهنا تتدخّل المنظومة لترجّح كفتك في كل مرة.</p>
-      </div>
-      <div class="flow" data-reveal>
-        <div class="card ghost"><div class="badge">01</div><div class="t">يبحث</div><div class="d">عن منتج أو خدمة كالتي تقدّمها</div></div>
-        <div class="card ghost"><div class="badge">02</div><div class="t">يكتشف نشاطك</div><div class="d">يظهر أمامه ضمن الخيارات</div></div>
-        <div class="card ghost"><div class="badge">03</div><div class="t">يثق بك</div><div class="d">يطمئن من العرض والتقييمات</div></div>
-        <div class="card ghost"><div class="badge">04</div><div class="t">يتواصل</div><div class="d">يسأل ويحصل على رد فوري — ويرى خيار التقسيط مباشرة قبل أن يتردد</div></div>
-        <div class="card ghost"><div class="badge">05</div><div class="t">يزور المعرض</div><div class="d">وقد حسم قراره مسبقًا</div></div>
-        <div class="card ghost" style="background:linear-gradient(135deg,var(--teal),var(--teal-deep));border-color:var(--teal)">
-          <div class="badge badge-fill" style="background:rgba(8,17,15,.18);color:#08110F">06</div>
-          <div class="t" style="color:#08110F">يشتري</div><div class="d" style="color:#08110F;opacity:.85">وتبدأ علاقة بيع مستمرة</div>
+        <div class="card" data-reveal>
+          <div class="iconb">✅</div>
+          <div class="card-title">نتابع حتى تصل النتيجة</div>
+          <div class="eyebrow" style="margin:.1rem 0 .6rem">جودة التنفيذ ونجاح الأعمال</div>
+          <p>تقرير شهري بأرقام قابلة للتحقق، ومتابعة دورية للتحسين — العلاقة لا تنتهي بالإطلاق.</p>
         </div>
-      </div>
-      <div class="quote" data-reveal style="margin-top:2rem">
-        <p class="q1">النمو اليوم لا يعتمد على جودة المنتج وحدها، بل على قدرتك على الظهور وبناء الثقة وتسهيل التواصل.</p>
-        <p class="q2">ولهذا صمّمنا منظومة تمكين النمو.</p>
       </div>
     </div>
   </section>
@@ -389,6 +395,10 @@
   <!-- ===== 4. الحل / المنظومة ===== -->
   <section class="section">
     <div class="wrap">
+      <div class="quote" data-reveal style="margin-bottom:2rem">
+        <p class="q1">النمو لا يعتمد على جودة المنتج وحدها، بل على الظهور وبناء الثقة وتسهيل التواصل.</p>
+        <p class="q2">ولهذا صمّمنا منظومة تمكين النمو.</p>
+      </div>
       <div class="head" data-reveal>
         <div class="eyebrow"><b>//</b> الحل</div>
         <h2 class="h2">منظومة تمكين النمو</h2>
@@ -453,47 +463,8 @@
     </div>
   </section>
 
-  <!-- ===== 6. الثقة / لماذا نحن ===== -->
-  <section class="section">
-    <div class="wrap">
-      <div class="head" data-reveal>
-        <div class="eyebrow"><b>//</b> لماذا نحن</div>
-        <h2 class="h2">لماذا نستطيع مساعدتك؟</h2>
-        <p class="lead">لأننا لسنا فريقًا تقنيًا فحسب. نجمع بين خبرة الأعمال وتقنية المعلومات والأدوات الحديثة الذكية والتسويق وخدمة العملاء وجودة التنفيذ — وهذا ما يجعلنا نفهم واقع المحلات والمعارض، لا أن نبني أدوات فقط.</p>
-      </div>
-      <div class="pills" data-reveal>
-        <span class="pill">خبرة الأعمال</span>
-        <span class="pill">تقنية المعلومات</span>
-        <span class="pill">أدوات حديثة ذكية</span>
-        <span class="pill">التسويق</span>
-        <span class="pill">خدمة العملاء</span>
-        <span class="pill">جودة التنفيذ</span>
-      </div>
-      <div class="grid c3">
-        <div class="card" data-reveal>
-          <div class="iconb">🧭</div>
-          <div class="card-title">نفهم لغة صاحب العمل</div>
-          <div class="eyebrow" style="margin:.1rem 0 .6rem">خبرة الأعمال وخدمة العملاء</div>
-          <p>خبرة في تقنية المعلومات وخدمات الأعمال، مع فهم عميق لقطاع الأرضيات والسيراميك وسلوك مشتريه — نترجم همّ صاحب المعرض إلى حلول تزيد مبيعاته.</p>
-        </div>
-        <div class="card" data-reveal>
-          <div class="iconb">⚙️</div>
-          <div class="card-title">نحوّل الأدوات الذكية إلى مبيعات</div>
-          <div class="eyebrow" style="margin:.1rem 0 .6rem">التقنية والأدوات الذكية والتسويق</div>
-          <p>نبني أتمتة واتساب وإعلانات موجّهة تخدم قرار الشراء مباشرة، لا تقنية للاستعراض.</p>
-        </div>
-        <div class="card" data-reveal>
-          <div class="iconb">✅</div>
-          <div class="card-title">نتابع حتى تصل النتيجة</div>
-          <div class="eyebrow" style="margin:.1rem 0 .6rem">جودة التنفيذ ونجاح الأعمال</div>
-          <p>تقرير شهري بأرقام قابلة للتحقق، ومتابعة دورية للتحسين — العلاقة لا تنتهي بالإطلاق.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== 7. خطوات العمل ===== -->
-  <section class="section s-beige">
+  <section class="section">
     <div class="wrap">
       <div class="head" data-reveal>
         <div class="eyebrow"><b>//</b> كيف نبدأ</div>
@@ -609,53 +580,56 @@
     </div>
   </section>
 
-  <!-- ===== 10. الأسئلة الشائعة ===== -->
+  <!-- ===== الأسئلة والنموذج ===== -->
   <section class="section s-beige">
     <div class="wrap">
       <div class="head" data-reveal>
         <div class="eyebrow"><b>//</b> قبل أن تبدأ</div>
         <h2 class="h2">الأسئلة الشائعة</h2>
       </div>
-      <div data-reveal>
-        <details><summary>هل أحتاج خبرة تقنية؟<span class="faq-plus">+</span></summary>
-          <p>إطلاقًا. نُنفّذ كل شيء نيابة عنك، وكل أداة مصمّمة ليستخدمها أي شخص بسهولة. دورك الوحيد أن تركّز على نشاطك.</p>
-        </details>
-        <details><summary>كم يستغرق الإطلاق؟<span class="faq-plus">+</span></summary>
-          <p>أسابيع لا أشهر. نبدأ بالأهمّ الذي يجلب لك عملاء أسرع، ثم نُكمل بقية المنظومة تباعًا.</p>
-        </details>
-        <details><summary>لديّ حسابات تواصل اجتماعي بالفعل، هل أبدأ من الصفر؟<span class="faq-plus">+</span></summary>
-          <p>لا. نبني على ما لديك ونطوّره ليصبح جزءًا من منظومة واحدة بهدف واضح: تحويل المتابع إلى عميل.</p>
-        </details>
-        <details><summary>كيف أعرف أن المنظومة تعمل؟<span class="faq-plus">+</span></summary>
-          <p>تقرير شهري واضح بالأرقام يبيّن ما أُنفق وما عاد عليك من عملاء واستفسارات ومبيعات — شفافية كاملة.</p>
-        </details>
-        <details><summary>هل الإعلانات المدفوعة مشمولة في السعر؟<span class="faq-plus">+</span></summary>
-          <p>نعم، في باقتَي النمو والتميّز. ميزانية 500 ريال و1,000 ريال على التوالي مشمولة ضمن السعر الشهري — لا تدفع إضافة.</p>
-        </details>
-        <details><summary>ماذا لو جرّبت ولم تُعجبني النتائج؟<span class="faq-plus">+</span></summary>
-          <p>الشهر الأول التجريبي بـ 499 ريال فقط وبدون أي التزام. بعده تختار أن تكمل أو لا — القرار كاملًا بيدك، بلا غرامات إنهاء.</p>
-        </details>
-        <details><summary>هل يمكن لعملائي الدفع بالتقسيط؟<span class="faq-plus">+</span></summary>
-          <p>نعم — نساعدك على تفعيل تابي أو تمارا لمعرضك، ونوظّف التقسيط في بوت الواتساب والمعرض الرقمي تلقائياً حتى يرى عميلك خيار القسط لحظة سؤاله — قبل أن يتردد.</p>
-        </details>
+      <div class="grid c2" style="gap:2.2rem;align-items:start" data-reveal>
+        <!-- FAQ column -->
+        <div>
+          <details><summary>هل أحتاج خبرة تقنية؟<span class="faq-plus">+</span></summary>
+            <p>إطلاقًا. نُنفّذ كل شيء نيابة عنك، وكل أداة مصمّمة ليستخدمها أي شخص بسهولة. دورك الوحيد أن تركّز على نشاطك.</p>
+          </details>
+          <details><summary>كم يستغرق الإطلاق؟<span class="faq-plus">+</span></summary>
+            <p>أسابيع لا أشهر. نبدأ بالأهمّ الذي يجلب لك عملاء أسرع، ثم نُكمل بقية المنظومة تباعًا.</p>
+          </details>
+          <details><summary>لديّ حسابات تواصل اجتماعي بالفعل، هل أبدأ من الصفر؟<span class="faq-plus">+</span></summary>
+            <p>لا. نبني على ما لديك ونطوّره ليصبح جزءًا من منظومة واحدة بهدف واضح: تحويل المتابع إلى عميل.</p>
+          </details>
+          <details><summary>كيف أعرف أن المنظومة تعمل؟<span class="faq-plus">+</span></summary>
+            <p>تقرير شهري واضح بالأرقام يبيّن ما أُنفق وما عاد عليك من عملاء واستفسارات ومبيعات — شفافية كاملة.</p>
+          </details>
+          <details><summary>هل الإعلانات المدفوعة مشمولة في السعر؟<span class="faq-plus">+</span></summary>
+            <p>نعم، في باقتَي النمو والتميّز. ميزانية 500 ريال و1,000 ريال على التوالي مشمولة ضمن السعر الشهري — لا تدفع إضافة.</p>
+          </details>
+          <details><summary>ماذا لو جرّبت ولم تُعجبني النتائج؟<span class="faq-plus">+</span></summary>
+            <p>الشهر الأول التجريبي بـ 499 ريال فقط وبدون أي التزام. بعده تختار أن تكمل أو لا — القرار كاملًا بيدك، بلا غرامات إنهاء.</p>
+          </details>
+          <details><summary>هل يمكن لعملائي الدفع بالتقسيط؟<span class="faq-plus">+</span></summary>
+            <p>نعم — نساعدك على تفعيل تابي أو تمارا لمعرضك، ونوظّف التقسيط في بوت الواتساب والمعرض الرقمي تلقائياً حتى يرى عميلك خيار القسط لحظة سؤاله — قبل أن يتردد.</p>
+          </details>
+        </div>
+        <!-- Demo card column -->
+        <div class="card" style="height:100%;display:flex;flex-direction:column;gap:.9rem">
+          <div class="eyebrow" style="margin-bottom:.2rem"><b>//</b> دليل واقعي لا مجرد وعد</div>
+          <div class="card-title" style="font-size:1.22rem">شاهد مثالاً حياً</div>
+          <p>نموذج حي لمعرض أرضيات افتراضي — يُبيّن كيف يعرض منتجاته، يبني الثقة، ويُسهّل التواصل مع العملاء قبل زيارة المعرض.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin:.3rem 0">
+            <span style="background:var(--beige);border:1px solid var(--line);border-radius:99px;padding:.28rem .85rem;font-size:.79rem;color:var(--ink-soft)">معاينة المنتج</span>
+            <span style="background:var(--beige);border:1px solid var(--line);border-radius:99px;padding:.28rem .85rem;font-size:.79rem;color:var(--ink-soft)">مستشار ذكي</span>
+            <span style="background:var(--beige);border:1px solid var(--line);border-radius:99px;padding:.28rem .85rem;font-size:.79rem;color:var(--ink-soft)">حاسبة تكلفة</span>
+            <span style="background:var(--beige);border:1px solid var(--line);border-radius:99px;padding:.28rem .85rem;font-size:.79rem;color:var(--ink-soft)">مساعد واتساب</span>
+          </div>
+          <a class="btn" style="margin-top:auto;align-self:flex-start" href="https://aseeaa0e-png.github.io/ardiyat-aldiyar/" target="_blank" rel="noopener">شاهد كيف يبدو معرض أرضياتك رقمياً ↗</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 11. النموذج الحي ===== -->
-  <section id="demo" class="section">
-    <div class="wrap">
-      <div class="head" data-reveal>
-        <div class="eyebrow"><b>//</b> دليل واقعي لا مجرد وعد</div>
-        <h2 class="h2">شاهد مثالاً حيًا</h2>
-        <p class="lead">نموذج حي لمعرض أرضيات افتراضي — يُبيّن كيف يعرض منتجاته، يبني الثقة، ويُسهّل التواصل مع العملاء قبل زيارة المعرض.</p>
-      </div>
-      <p data-reveal style="font-size:.95rem;color:var(--ink-soft);margin-bottom:1.4rem">داخل النموذج: معاينة المنتج · مستشار ذكي · حاسبة تكلفة · مساعد واتساب — جميعها تعمل أمامك مباشرة.</p>
-      <a class="btn" data-reveal href="https://aseeaa0e-png.github.io/ardiyat-aldiyar/" target="_blank" rel="noopener">شاهد كيف يبدو معرض أرضياتك رقمياً ↗</a>
-    </div>
-  </section>
-
-  <!-- ===== 12. التواصل ===== -->
+<!-- ===== 12. التواصل ===== -->
   <section id="contact" class="section s-dark">
     <div class="wrap center">
       <h2 class="h2" data-reveal>هل يجدك عملاؤك قبل منافسيك؟</h2>
